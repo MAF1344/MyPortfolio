@@ -2,7 +2,7 @@ import {motion} from 'framer-motion';
 
 export default function About() {
   return (
-    <motion.div className="p-8 max-w-2xl mx-auto" initial={{opacity: 0, y: 10}} animate={{opacity: 1, y: 0}} transition={{duration: 0.5}}>
+    <motion.div className="p-8 max-w-2xl mx-auto pt-20" initial={{opacity: 0, y: 10}} animate={{opacity: 1, y: 0}} transition={{duration: 0.5}}>
       <h1 className="text-3xl font-bold">About Me</h1>
       <p className="mt-2 text-gray-700 leading-relaxed">
         I am a passionate Web Developer with a love for building modern, responsive, and interactive websites. I enjoy learning new technologies and constantly improving my skills to deliver high-quality projects.

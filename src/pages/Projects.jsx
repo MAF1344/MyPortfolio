@@ -21,11 +21,11 @@ const projects = [
 
 export default function Projects() {
   return (
-    <motion.div className="p-8 max-w-4xl mx-auto" initial={{opacity: 0, y: 10}} animate={{opacity: 1, y: 0}} transition={{duration: 0.5}}>
+    <motion.div className="p-8 pt-20 max-w-4xl mx-auto" initial={{opacity: 0, y: 10}} animate={{opacity: 1, y: 0}} transition={{duration: 0.5}}>
       <h2 className="text-3xl font-bold mb-6">Projects</h2>
       <div className="grid gap-6 md:grid-cols-2">
         {projects.map((projects, index) => (
-          <div key={index} className="bg-white shadow rounded-lg p-5 border border-gray-200">
+          <div key={index} className="bg-white dark:bg-gray-800 shadow rounded-lg p-5 border border-gray-200 dark:border-gray-700">
             <h3 className="text-xl font-semibold">{projects.title}</h3>
             <p className="mt-2 text-gray-600">{projects.description}</p>
             <a href={projects.link} className="inline-block mt-3 text-blue-500 hover:underline">

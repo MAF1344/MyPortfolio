@@ -1,29 +1,25 @@
 import {useState} from 'react';
-import {Link} from 'react-router-dom';
 
 export default function Navbar({darkMode, toggleDarkMode}) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-gray-900 text-white px-6 py-4 flex items-center justify-between">
-      <Link to="/" className="text-xl font-bold">
+    <nav className="fixed w-full top-0 z-50 left-0 bg-gray-900 text-white px-6 py-4 flex items-center justify-between">
+      <a href="#top" className="text-xl font-bold">
         MyPortfolio
-      </Link>
+      </a>
 
       {/* Desktop Menu */}
       <div className="hidden md:flex gap-6">
-        <Link to="/" className="hover:text-yellow-400">
-          Home
-        </Link>
-        <Link to="/about" className="hover:text-yellow-400">
+        <a href="#about" className="hover:text-yellow-400">
           About
-        </Link>
-        <Link to="/projects" className="hover:text-yellow-400">
+        </a>
+        <a href="#projects" className="hover:text-yellow-400">
           Projects
-        </Link>
-        <Link to="/contact" className="hover:text-yellow-400">
+        </a>
+        <a href="#contact" className="hover:text-yellow-400">
           Contact
-        </Link>
+        </a>
         <button onClick={toggleDarkMode} className="px-3 py-1 border rounded hover:bg-gray-700">
           {darkMode ? '☀ Light' : '🌙 Dark'}
         </button>
@@ -37,18 +33,18 @@ export default function Navbar({darkMode, toggleDarkMode}) {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="absolute top-15 left-0 w-full bg-gray-800 flex flex-col items-center gap-4 py-4 md:hidden">
-          <Link to="/" onClick={() => setIsOpen(false)}>
+          <a href="#home" onClick={() => setIsOpen(false)}>
             Home
-          </Link>
-          <Link to="/about" onClick={() => setIsOpen(false)}>
+          </a>
+          <a href="#about" onClick={() => setIsOpen(false)}>
             About
-          </Link>
-          <Link to="/projects" onClick={() => setIsOpen(false)}>
+          </a>
+          <a href="#projects" onClick={() => setIsOpen(false)}>
             Projects
-          </Link>
-          <Link to="/contact" onClick={() => setIsOpen(false)}>
+          </a>
+          <a href="#contact" onClick={() => setIsOpen(false)}>
             Contact
-          </Link>
+          </a>
           <button
             onClick={() => {
               toggleDarkMode();
