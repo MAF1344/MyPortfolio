@@ -33,9 +33,6 @@ export default function Navbar({darkMode, toggleDarkMode}) {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="absolute top-15 left-0 w-full bg-gray-800 flex flex-col items-center gap-4 py-4 md:hidden">
-          <a href="#home" onClick={() => setIsOpen(false)}>
-            Home
-          </a>
           <a href="#about" onClick={() => setIsOpen(false)}>
             About
           </a>
