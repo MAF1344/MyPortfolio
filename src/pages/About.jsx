@@ -10,10 +10,14 @@ export default function About() {
       <ul className="grid grid-cols-2 gap-3 mt-3 text-gray-600">
         <li>HTML5 & CSS3</li>
         <li>JavaScript</li>
+        <li>MySQL</li>
         <li>React.js</li>
         <li>TailwindCss</li>
         <li>Node.js</li>
         <li>MongoDB</li>
+        <li>Python</li>
+        <li>Django</li>
+        <li>PostgreSQL</li>
       </ul>
     </div>
   );
