@@ -9,6 +9,9 @@ import Contact from './pages/Contact'
 import Footer from './components/Footer'
 
 import Portfolio from './pages/Projects/Portfolio' 
+import Puskesmas from './pages/Projects/Puskesmas'
+import TokoBuku from './pages/Projects/TokoBuku'
+import CovidLanding from './pages/Projects/CovidAPI'
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false)
@@ -44,6 +47,9 @@ export default function App() {
               }
             />
             <Route path="/projects/portfolio" element={<Portfolio />} />
+            <Route path="/projects/puskesmas" element={<Puskesmas />} />
+            <Route path="/projects/toko-buku" element={<TokoBuku />} />
+            <Route path="/projects/covid-api" element={<CovidLanding />} />
           </Routes>
         </div>
 

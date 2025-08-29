@@ -1,23 +1,5 @@
 import { Link } from 'react-router-dom'
-import '../../src/index.css'
-
-const projects = [
-  {
-    title: 'Portfolio Website',
-    description: 'Website portfolio pribadi untuk menampilkan proyek dan informasi singkat saya.',
-    link: '/projects/portfolio',
-  },
-  {
-    title: 'Puskesmas',
-    description: 'Aplikasi manajemen data puskesmas sederhana menggunakan Laravel dan MySQL.',
-    link: '/projects/puskesmas',
-  },
-  {
-    title: 'Toko Buku',
-    description: 'Aplikasi toko buku online dengan fitur katalog, profil, dan checkout.',
-    link: '/projects/toko-buku',
-  },
-]
+import projects from '../utils/projectData'
 
 export default function Projects() {
   return (
@@ -46,6 +28,11 @@ export default function Projects() {
           </div>
         ))}
       </div>
+
+      {/* Info tambahan di bawah */}
+      <p className="mt-10 text-center text-gray-500 italic">
+        Proyek-proyek lainnya akan segera hadir di sini. Nantikan update berikutnya ✨
+      </p>
     </div>
   )
 }
