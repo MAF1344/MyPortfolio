@@ -1,24 +1,26 @@
 import { Link } from 'react-router-dom'
-import projects from '../utils/projectData'
-import MiniProjects from './MiniProjects'
+import miniProjects from '../utils/miniProjectData'
 
 export default function Projects() {
   return (
     <div className="mx-auto max-w-4xl p-8 pt-20">
-      <h2 className="mb-2 text-3xl font-bold">Proyek</h2>
+      <h3 className="mt-10 mb-2 text-3xl font-bold">Proyek Mini</h3>
       <h5 className="mb-6 text-gray-600">
         Berikut adalah beberapa proyek yang sudah saya kerjakan
       </h5>
       <div className="grid gap-6 md:grid-cols-2">
-        {projects.map((project, index) => (
+        {miniProjects.map((miniproject, index) => (
           <div
             key={index}
             className="w-full max-w-md rounded-lg border border-gray-200 bg-white p-5 shadow dark:border-gray-700 dark:bg-gray-800"
           >
-            <h3 className="text-xl font-semibold">{project.title}</h3>
-            <p className="mt-2 text-gray-600">{project.description}</p>
-            {project.link !== '#' ? (
-              <Link to={project.link} className="mt-3 inline-block text-blue-500 hover:underline">
+            <h3 className="text-xl font-semibold">{miniproject.title}</h3>
+            <p className="mt-2 text-gray-600">{miniproject.description}</p>
+            {miniproject.link !== '#' ? (
+              <Link
+                to={miniproject.link}
+                className="mt-3 inline-block text-blue-500 hover:underline"
+              >
                 View Project →
               </Link>
             ) : (
@@ -34,8 +36,6 @@ export default function Projects() {
       <p className="mt-10 text-center text-gray-500 italic">
         Proyek-proyek lainnya akan segera hadir di sini. Nantikan update berikutnya ✨
       </p>
-
-      <MiniProjects />
     </div>
   )
 }

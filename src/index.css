@@ -5,3 +5,7 @@
 @theme {
   --color-primary: oklch(62.3% 0.214 259.815);
 }
+
+.btn {
+  @apply rounded-lg bg-gray-200 p-4 text-lg hover:bg-gray-300;
+}
