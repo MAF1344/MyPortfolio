@@ -80,7 +80,7 @@ export default async function ProjectDetailPage({params}: {params: Promise<{slug
                 {project.techChoices.map((t) => (
                   <div key={t.name} className="glass-panel rounded-xl px-4 py-3">
                     <p className="font-mono text-xs text-amber">{t.name}</p>
-                    <p className="mt-1 max-w-[220px] font-body text-xs text-ink-muted">{t.reason}</p>
+                    <p className="mt-1 max-w-55 font-body text-xs text-ink-muted">{t.reason}</p>
                   </div>
                 ))}
               </div>

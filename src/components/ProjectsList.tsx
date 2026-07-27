@@ -13,7 +13,7 @@ export default function ProjectsList() {
           <ul className="mt-8 flex flex-col gap-3">
             {projects.map((project) => (
               <li key={project.slug}>
-                <Link href={`/projects/${project.slug}`} className="glass-panel group flex items-center justify-between gap-4 rounded-2xl px-6 py-5 transition-colors hover:bg-white/[0.08]">
+                <Link href={`/projects/${project.slug}`} className="glass-panel group flex items-center justify-between gap-4 rounded-2xl px-6 py-5 transition-colors hover:bg-white/8">
                   <div>
                     <p className="font-display text-lg font-medium text-ink">{project.title}</p>
                     <p className="mt-1 font-mono text-xs text-ink-muted">{project.tag}</p>
