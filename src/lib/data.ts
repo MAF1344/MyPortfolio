@@ -91,3 +91,9 @@ export const miniProjects: MiniProject[] = [
 export function getProjectBySlug(slug: string) {
   return projects.find((p) => p.slug === slug);
 }
+
+export const contactLinks = [
+  {label: 'Email', value: 'malfatih1344@gmail.com', href: 'mailto:malfatih1344@gmail.com'},
+  {label: 'GitHub', value: 'github.com/maf1344', href: 'https://github.com/maf1344'},
+  {label: 'LinkedIn', value: 'linkedin.com/in/malfatih', href: 'https://linkedin.com/in/malfatih'},
+];
