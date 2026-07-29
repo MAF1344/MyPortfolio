@@ -187,30 +187,25 @@ body {
 /* ---------- Certificates marquee ---------- */
 
 .cert-marquee {
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
   -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
   mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.cert-marquee.grab {
+  cursor: grab;
+}
+
+.cert-marquee.grabbing {
+  cursor: grabbing;
 }
 
 .cert-track {
   display: flex;
   width: max-content;
   gap: 1rem;
-  animation: cert-scroll 28s linear infinite;
-}
-
-.cert-marquee:hover .cert-track,
-.cert-marquee:focus-within .cert-track {
-  animation-play-state: paused;
-}
-
-@keyframes cert-scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
 }
 
 .cert-card {
@@ -230,10 +225,4 @@ body {
 .cert-card:focus-visible {
   transform: translateY(-4px);
   border-color: rgba(251, 146, 60, 0.65);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .cert-track {
-    animation: none;
-  }
 }
