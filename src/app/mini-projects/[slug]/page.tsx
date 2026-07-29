@@ -3,12 +3,20 @@ import Link from 'next/link';
 import {miniProjects} from '@/lib/data';
 import Calculator from '@/components/mini-projects/Calculator';
 import TicTacToe from '@/components/mini-projects/TicTacToe';
+import TodoList from '@/components/mini-projects/TodoList';
+import SuitJepang from '@/components/mini-projects/SuitJepang';
+import MoneyTracker from '@/components/mini-projects/MoneyTracker';
+import AgeCalculator from '@/components/mini-projects/AgeCalculator';
 
 // Daftarkan komponen mini-project di sini. Setiap slug baru di data.ts
 // butuh entry baru di sini juga.
 const registry: Record<string, React.ComponentType> = {
   calculator: Calculator,
   'tic-tac-toe': TicTacToe,
+  'todo-list': TodoList,
+  'suit-jepang': SuitJepang,
+  'money-tracker': MoneyTracker,
+  'age-calculator': AgeCalculator,
 };
 
 export function generateStaticParams() {
@@ -32,7 +40,7 @@ export default async function MiniProjectDetailPage({params}: {params: Promise<{
 
   return (
     <main className="flex min-h-screen flex-col items-center px-6 pb-24 pt-28">
-      <div className="w-full max-w-xs">
+      <div className="w-full max-w-md">
         <Link href="/#mini-projects" className="font-body text-sm text-ink-muted transition-colors hover:text-ink">
           ← Kembali
         </Link>
