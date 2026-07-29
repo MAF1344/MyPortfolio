@@ -97,3 +97,47 @@ export const contactLinks = [
   {label: 'GitHub', value: 'github.com/maf1344', href: 'https://github.com/maf1344'},
   {label: 'LinkedIn', value: 'linkedin.com/in/malfatih', href: 'https://linkedin.com/in/malfatih'},
 ];
+
+export type Certificate = {
+  slug: string;
+  title: string;
+  issuer: string;
+  date: string;
+  description: string;
+};
+
+// TODO: ganti isi di bawah ini dengan sertifikat asli kamu.
+export const certificates: Certificate[] = [
+  {
+    slug: 'cert-1',
+    title: 'Office Profesional',
+    issuer: 'NF Computer',
+    date: '16 Januari 2023',
+    description:
+      'Sertifikat ini menandakan bahwa saya telah menyelesaikan kursus dan lulus ujian Office Profesional, yang mencakup pemahaman dasar tentang aplikasi Microsoft Office, termasuk Word, Excel, dan PowerPoint. Sertifikat ini membuktikan kemampuan saya dalam mengelola dokumen, data, dan presentasi secara efisien serta meningkatkan produktivitas kerja.',
+  },
+  {
+    slug: 'cert-2',
+    title: 'Graphics Design',
+    issuer: 'Hendevane Indonesia',
+    date: '17 Juli 2023',
+    description:
+      'Sertifikat ini menandakan bahwa saya telah menyelesaikan kursus dan lulus ujian Graphics Design, yang mencakup pemahaman dasar tentang prinsip-prinsip desain grafis, penggunaan software desain, dan penerapan kreatif dalam proyek-proyek visual. Sertifikat ini membuktikan kemampuan saya dalam menciptakan desain yang menarik dan efektif.',
+  },
+  {
+    slug: 'cert-3',
+    title: 'Python Web Developer',
+    issuer: 'Software University Indonesia',
+    date: '31 Desember 2024',
+    description:
+      'Sertifikat ini menandakan bahwa saya telah menyelesaikan kursus dan lulus ujian Python Web Developer, yang mencakup pemahaman dasar dan menengah tentang pengembangan web menggunakan bahasa pemrograman Python khususnya dengan framework Django. Sertifikat ini membuktikan kemampuan saya dalam membuat aplikasi web yang responsif dan skalabel.',
+  },
+  {
+    slug: 'cert-4',
+    title: 'Junior Mobile Developer',
+    issuer: 'Badan Nasional Sertifikasi Nasional',
+    date: '31 Juli 2025',
+    description:
+      'Sertifikat ini menandakan bahwa saya telah menyelesaikan kursus dan lulus ujian Junior Mobile Developer, yang mencakup pemahaman dasar tentang pengembangan aplikasi mobile menggunakan teknologi bahasa pemrograman Dart dipadukan dengan framework Flutter. Sertifikat ini membuktikan kemampuan saya dalam membuat aplikasi mobile yang responsif dan user-friendly.',
+  },
+];

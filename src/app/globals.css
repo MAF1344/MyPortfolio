@@ -147,6 +147,15 @@ body {
   }
 }
 
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 ::selection {
   background: var(--violet);
   color: var(--bg-base);
@@ -171,6 +180,60 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .hero-enter {
+    animation: none;
+  }
+}
+
+/* ---------- Certificates marquee ---------- */
+
+.cert-marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.cert-track {
+  display: flex;
+  width: max-content;
+  gap: 1rem;
+  animation: cert-scroll 28s linear infinite;
+}
+
+.cert-marquee:hover .cert-track,
+.cert-marquee:focus-within .cert-track {
+  animation-play-state: paused;
+}
+
+@keyframes cert-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.cert-card {
+  background: linear-gradient(135deg, rgba(251, 146, 60, 0.14), rgba(255, 255, 255, 0.04));
+  border: 1px solid rgba(251, 146, 60, 0.35);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 8px 24px rgba(0, 0, 0, 0.3);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.cert-card:hover,
+.cert-card:focus-visible {
+  transform: translateY(-4px);
+  border-color: rgba(251, 146, 60, 0.65);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cert-track {
     animation: none;
   }
 }
