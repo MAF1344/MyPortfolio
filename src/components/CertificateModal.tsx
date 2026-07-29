@@ -2,6 +2,7 @@
 
 import {useEffect} from 'react';
 import type {Certificate} from '@/lib/data';
+import Image from 'next/image';
 
 export default function CertificateModal({cert, onClose}: {cert: Certificate; onClose: () => void}) {
   useEffect(() => {
@@ -23,7 +24,15 @@ export default function CertificateModal({cert, onClose}: {cert: Certificate; on
             ✕
           </button>
         </div>
-
+        {cert.image ? (
+          <div className="mt-4 overflow-hidden rounded-2xl">
+            <Image src={cert.image} alt={`Sertifikat ${cert.title}`} width={640} height={420} className="block h-auto w-full" />
+          </div>
+        ) : (
+          <div className="mt-4 flex aspect-video items-center justify-center rounded-2xl border border-dashed border-white/15">
+            <p className="font-mono text-xs text-ink-muted">Foto sertifikat belum ditambahkan</p>
+          </div>
+        )}
         <h3 id="cert-modal-title" className="mt-4 font-display text-xl font-semibold text-ink">
           {cert.title}
         </h3>

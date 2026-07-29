@@ -93,7 +93,7 @@ export function getProjectBySlug(slug: string) {
 }
 
 export const contactLinks = [
-  {label: 'Email', value: 'malfatih1344@gmail.com', href: 'mailto:malfatih1344@gmail.com'},
+  {label: 'Gmail', value: 'malfatih1344@gmail.com', href: 'mailto:malfatih1344@gmail.com'},
   {label: 'GitHub', value: 'github.com/maf1344', href: 'https://github.com/maf1344'},
   {label: 'LinkedIn', value: 'linkedin.com/in/malfatih', href: 'https://linkedin.com/in/malfatih'},
 ];
@@ -104,6 +104,7 @@ export type Certificate = {
   issuer: string;
   date: string;
   description: string;
+  image?: string;
 };
 
 // TODO: ganti isi di bawah ini dengan sertifikat asli kamu.
@@ -115,6 +116,7 @@ export const certificates: Certificate[] = [
     date: '16 Januari 2023',
     description:
       'Sertifikat ini menandakan bahwa saya telah menyelesaikan kursus dan lulus ujian Office Profesional, yang mencakup pemahaman dasar tentang aplikasi Microsoft Office, termasuk Word, Excel, dan PowerPoint. Sertifikat ini membuktikan kemampuan saya dalam mengelola dokumen, data, dan presentasi secara efisien serta meningkatkan produktivitas kerja.',
+    image: '/certificates/literasiOffice.jpg',
   },
   {
     slug: 'cert-2',
@@ -123,6 +125,7 @@ export const certificates: Certificate[] = [
     date: '17 Juli 2023',
     description:
       'Sertifikat ini menandakan bahwa saya telah menyelesaikan kursus dan lulus ujian Graphics Design, yang mencakup pemahaman dasar tentang prinsip-prinsip desain grafis, penggunaan software desain, dan penerapan kreatif dalam proyek-proyek visual. Sertifikat ini membuktikan kemampuan saya dalam menciptakan desain yang menarik dan efektif.',
+    image: '/certificates/graphicsDesign.jpg',
   },
   {
     slug: 'cert-3',
@@ -131,6 +134,7 @@ export const certificates: Certificate[] = [
     date: '31 Desember 2024',
     description:
       'Sertifikat ini menandakan bahwa saya telah menyelesaikan kursus dan lulus ujian Python Web Developer, yang mencakup pemahaman dasar dan menengah tentang pengembangan web menggunakan bahasa pemrograman Python khususnya dengan framework Django. Sertifikat ini membuktikan kemampuan saya dalam membuat aplikasi web yang responsif dan skalabel.',
+    image: '/certificates/pythonWebDev.jpg',
   },
   {
     slug: 'cert-4',
@@ -139,5 +143,6 @@ export const certificates: Certificate[] = [
     date: '31 Juli 2025',
     description:
       'Sertifikat ini menandakan bahwa saya telah menyelesaikan kursus dan lulus ujian Junior Mobile Developer, yang mencakup pemahaman dasar tentang pengembangan aplikasi mobile menggunakan teknologi bahasa pemrograman Dart dipadukan dengan framework Flutter. Sertifikat ini membuktikan kemampuan saya dalam membuat aplikasi mobile yang responsif dan user-friendly.',
+    image: '/certificates/juniorMobileDev.jpg',
   },
 ];
