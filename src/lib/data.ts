@@ -76,16 +76,12 @@ export const projects: Project[] = [
 
 // Fase 3 akan mengisi mini-project yang benar-benar interaktif.
 export const miniProjects: MiniProject[] = [
-  {
-    slug: 'calculator',
-    name: 'Calculator',
-    icon: '🧮',
-  },
-  {
-    slug: 'tic-tac-toe',
-    name: 'Tic-Tac-Toe',
-    icon: '⭕',
-  },
+  {slug: 'calculator', name: 'Calculator', icon: '🧮'},
+  {slug: 'tic-tac-toe', name: 'Tic-Tac-Toe', icon: '⭕'},
+  {slug: 'todo-list', name: 'To-Do List', icon: '📝'},
+  {slug: 'suit-jepang', name: 'Suit Jepang', icon: '✊'},
+  {slug: 'money-tracker', name: 'Pencatatan Uang', icon: '💰'},
+  {slug: 'age-calculator', name: 'Hitung Usia', icon: '🎂'},
 ];
 
 export function getProjectBySlug(slug: string) {
@@ -107,7 +103,6 @@ export type Certificate = {
   image?: string;
 };
 
-// TODO: ganti isi di bawah ini dengan sertifikat asli kamu.
 export const certificates: Certificate[] = [
   {
     slug: 'cert-1',
