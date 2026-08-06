@@ -40,7 +40,10 @@ export const projects: Project[] = [
         reason: 'Basis data relasional yang andal untuk menangani integritas data transaksi dan relasi antar tabel secara terstruktur.',
       },
     ],
-    screenshots: [],
+    screenshots: [
+      {src: '/projects/toko_buku/1.webp', alt: 'Toko Buku - screenshot 1'},
+      {src: '/projects/toko_buku/2.webp', alt: 'Toko Buku - screenshot 2'},
+    ],
   },
   {
     slug: 'internal-management-app',
@@ -70,7 +73,10 @@ export const projects: Project[] = [
         reason: 'Sangat cocok untuk menyimpan data operasional yang membutuhkan struktur kueri kompleks dan skala relasi yang rapi.',
       },
     ],
-    screenshots: [],
+    screenshots: [
+      {src: '/projects/kobagus/1.webp', alt: 'Kobagus - screenshot 1'},
+      {src: '/projects/kobagus/2.webp', alt: 'Kobagus - screenshot 2'},
+    ],
   },
 ];
 
@@ -92,6 +98,8 @@ export const contactLinks = [
   {label: 'Gmail', value: 'malfatih1344@gmail.com', href: 'mailto:malfatih1344@gmail.com'},
   {label: 'GitHub', value: 'github.com/maf1344', href: 'https://github.com/maf1344'},
   {label: 'LinkedIn', value: 'linkedin.com/in/malfatih', href: 'https://linkedin.com/in/malfatih'},
+  {label: 'Instagram', value: 'instagram.com/fatih_1344', href: 'https://instagram.com/fatih_1344'},
+  {label: 'TikTok', value: 'tiktok.com/@maf1344', href: 'https://tiktok.com/@maf1344'},
 ];
 
 export type Certificate = {

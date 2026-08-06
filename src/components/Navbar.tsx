@@ -12,10 +12,10 @@ export default function Navbar() {
         <a href="#top" className="shrink-0 font-display text-xs font-semibold leading-none tracking-tight text-ink sm:text-sm">
           Fatih<span className="text-teal">.</span>
         </a>
-        <ul className="no-scrollbar flex items-center gap-2 overflow-x-auto sm:gap-5">
+        <ul className="no-scrollbar flex items-center gap-2 overflow-x-auto sm:gap-6">
           {links.map((link) => (
             <li key={link.href} className="shrink-0">
-              <a href={link.href} className="font-body text-[10px] leading-none text-ink-muted transition-colors hover:text-ink sm:text-sm">
+              <a href={link.href} className="font-body text-[12px] leading-none text-ink-muted transition-colors hover:text-ink sm:text-sm">
                 {link.label}
               </a>
             </li>

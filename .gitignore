@@ -60,3 +60,9 @@ pnpm-lock.yaml
 
 # Storybook
 storybook-static/
+
+# Project Structure
+tree.txt
+
+# New-Project
+new-project/

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import {notFound} from 'next/navigation';
 import Image from 'next/image';
 import {projects, getProjectBySlug} from '@/lib/data';
+import {getScreenshotsForProject} from '@/lib/projectImages';
 
 export function generateStaticParams() {
   return projects.map((p) => ({slug: p.slug}));
@@ -89,18 +90,24 @@ export default async function ProjectDetailPage({params}: {params: Promise<{slug
             <section>
               <SectionLabel>SCREENSHOT</SectionLabel>
               <div className="mt-3 flex flex-col gap-4">
-                {project.screenshots.length === 0 ? (
-                  <div className="glass-panel flex aspect-video items-center justify-center rounded-2xl">
-                    <p className="font-mono text-xs text-ink-muted">Screenshot belum ditambahkan</p>
-                  </div>
-                ) : (
-                  project.screenshots.map((s) => (
+                {(() => {
+                  const fsScreens = getScreenshotsForProject(project.slug);
+                  const screenshotsToShow = fsScreens.length > 0 ? fsScreens : project.screenshots;
+
+                  if (screenshotsToShow.length === 0) {
+                    return (
+                      <div className="glass-panel flex aspect-video items-center justify-center rounded-2xl">
+                        <p className="font-mono text-xs text-ink-muted">Screenshot belum ditambahkan</p>
+                      </div>
+                    );
+                  }
+
+                  return screenshotsToShow.map((s) => (
                     <div key={s.src} className="glass-panel overflow-hidden rounded-2xl">
-                      {/* Taruh file gambar asli di public{s.src} agar tampil di sini */}
                       <Image src={s.src} alt={s.alt} width={960} height={540} className="block h-auto w-full" />
                     </div>
-                  ))
-                )}
+                  ));
+                })()}
               </div>
             </section>
           </div>

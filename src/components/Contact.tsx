@@ -1,12 +1,14 @@
 import {contactLinks} from '@/lib/data';
 import Reveal from '@/components/Reveal';
-import {GmailIcon, GithubIcon, LinkedinIcon} from '@/components/Icons';
+import {GmailIcon, GithubIcon, LinkedinIcon, InstagramIcon, TiktokIcon} from '@/components/Icons';
 
 // Warna hover disesuaikan dengan warna brand masing-masing platform.
 const iconByLabel: Record<string, {Icon: typeof GmailIcon; hoverClass: string}> = {
   Gmail: {Icon: GmailIcon, hoverClass: 'hover:text-[#D14836]'},
   GitHub: {Icon: GithubIcon, hoverClass: 'hover:text-[#181717]'},
   LinkedIn: {Icon: LinkedinIcon, hoverClass: 'hover:text-[#0A66C2]'},
+  Instagram: {Icon: InstagramIcon, hoverClass: 'hover:text-[#E4405F]'},
+  TikTok: {Icon: TiktokIcon, hoverClass: 'hover:text-[#000000]'},
 };
 
 export default function Contact() {
