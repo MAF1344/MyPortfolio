@@ -56,7 +56,7 @@ export default function AgeCalculator() {
           value={birthInput}
           onChange={(e) => setBirthInput(e.target.value)}
           max={new Date().toISOString().split('T')[0]}
-          className="glass-panel rounded-xl px-3 py-2 font-body text-sm text-ink [color-scheme:dark] focus:outline-none"
+          className="glass-panel rounded-xl px-3 py-2 font-body text-sm text-ink scheme-dark focus:outline-none"
         />
         <button onClick={handleCalculate} className="glass-panel rounded-xl px-4 py-2 font-body text-sm font-medium text-teal transition-transform hover:scale-[1.02] active:scale-95">
           Hitung umur

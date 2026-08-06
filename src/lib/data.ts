@@ -88,6 +88,7 @@ export const miniProjects: MiniProject[] = [
   {slug: 'suit-jepang', name: 'Suit Jepang', icon: '✊'},
   {slug: 'money-tracker', name: 'Pencatatan Uang', icon: '💰'},
   {slug: 'age-calculator', name: 'Hitung Usia', icon: '🎂'},
+  {slug: 'time-calculator', name: 'Hitung Waktu', icon: '⏱️'},
 ];
 
 export function getProjectBySlug(slug: string) {
