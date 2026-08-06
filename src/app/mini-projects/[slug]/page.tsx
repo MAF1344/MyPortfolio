@@ -1,59 +1,55 @@
-import {notFound} from 'next/navigation';
+'use client';
+
 import Link from 'next/link';
 import {miniProjects} from '@/lib/data';
-import Calculator from '@/components/mini-projects/Calculator';
-import TicTacToe from '@/components/mini-projects/TicTacToe';
-import TodoList from '@/components/mini-projects/TodoList';
-import SuitJepang from '@/components/mini-projects/SuitJepang';
-import MoneyTracker from '@/components/mini-projects/MoneyTracker';
-import AgeCalculator from '@/components/mini-projects/AgeCalculator';
+import {useState} from 'react';
 
-// Daftarkan komponen mini-project di sini. Setiap slug baru di data.ts
-// butuh entry baru di sini juga.
-const registry: Record<string, React.ComponentType> = {
-  calculator: Calculator,
-  'tic-tac-toe': TicTacToe,
-  'todo-list': TodoList,
-  'suit-jepang': SuitJepang,
-  'money-tracker': MoneyTracker,
-  'age-calculator': AgeCalculator,
-};
-
-export function generateStaticParams() {
-  return miniProjects.map((mp) => ({slug: mp.slug}));
-}
-
-export async function generateMetadata({params}: {params: Promise<{slug: string}>}) {
-  const {slug} = await params;
-  const mp = miniProjects.find((m) => m.slug === slug);
-  return {title: mp ? `${mp.name} — Portfolio` : 'Mini-Project'};
-}
-
-export default async function MiniProjectDetailPage({params}: {params: Promise<{slug: string}>}) {
-  const {slug} = await params;
-  const meta = miniProjects.find((m) => m.slug === slug);
-  const Component = registry[slug];
-
-  if (!meta || !Component) {
-    notFound();
-  }
+export default function MiniProjectsGrid() {
+  const [showAll, setShowAll] = useState(false);
 
   return (
-    <main className="flex min-h-screen flex-col items-center px-6 pb-24 pt-28">
-      <div className="w-full max-w-md">
-        <Link href="/#mini-projects" className="font-body text-sm text-ink-muted transition-colors hover:text-ink">
-          ← Kembali
-        </Link>
+    <section id="mini-projects" className="px-6 py-24">
+      <div className="mx-auto w-full max-w-3xl">
+        <span className="font-mono text-xs tracking-widest text-amber">[ MINI-PROJECTS ]</span>
+        <h2 className="mt-3 font-display text-2xl font-semibold text-ink sm:text-3xl">Bisa langsung dicoba</h2>
 
-        <div className="mt-4 mb-6 text-center">
-          <span className="text-3xl" aria-hidden="true">
-            {meta.icon}
-          </span>
-          <h1 className="mt-2 font-display text-2xl font-semibold text-ink">{meta.name}</h1>
+        <div className="relative mt-8">
+          {/* --- BAGIAN INI DIHAPUS (Tidak perlu overlay) --- */}
+          {/* {!showAll && (
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-32 bg-gradient-to-t from-paper to-transparent" />
+          )} */}
+
+          <div className={`grid grid-cols-2 gap-4 sm:grid-cols-3 ${!showAll ? 'max-h-[480px] overflow-hidden sm:max-h-[320px]' : ''}`}>
+            {miniProjects.map((mp, index) => {
+              // Logika deteksi preview card (sudah benar di kode Anda)
+              const isPreview = !showAll && index >= 3;
+
+              return (
+                <Link
+                  key={mp.slug}
+                  href={`/mini-projects/${mp.slug}`}
+                  // Terapkan masking hanya jika isPreview true
+                  className={`glass-panel group flex aspect-square flex-col items-center justify-center gap-3 rounded-2xl transition-all hover:scale-[1.04] 
+                    ${isPreview ? 'mask-card-fade' : ''}
+                  `}>
+                  <span className="text-3xl" aria-hidden="true">
+                    {mp.icon}
+                  </span>
+                  <span className="font-body text-sm font-medium text-ink-muted transition-colors group-hover:text-ink">{mp.name}</span>
+                </Link>
+              );
+            })}
+          </div>
         </div>
 
-        <Component />
+        {miniProjects.length > 3 && (
+          <div className="mt-4 flex justify-center">
+            <button onClick={() => setShowAll(!showAll)} className="glass-panel rounded-full px-6 py-3 font-body text-sm font-medium text-ink-muted transition-colors hover:text-ink hover:shadow-lg">
+              {showAll ? 'Tampilkan Lebih Sedikit' : 'Tampilkan Lebih Banyak'}
+            </button>
+          </div>
+        )}
       </div>
-    </main>
+    </section>
   );
 }
